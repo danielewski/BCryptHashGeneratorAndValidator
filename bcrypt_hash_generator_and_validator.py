@@ -14,7 +14,6 @@ def welcome_func():
         quit()
     else:
         print("Invalid input.")
-        welcome_func()
 
 
 def generate_hash():
@@ -27,11 +26,9 @@ def generate_hash():
     if bcrypt.checkpw(byte_password, hashed_password):
         decoded_hashed_password = hashed_password.decode()
         pyperclip.copy(decoded_hashed_password)
-        print("Success, Hashed password copied to clipboard: " + decoded_hashed_password)
-        welcome_func()
+        print("Success, Hashed password copied to clipboard: ", decoded_hashed_password, "\n")
     else:
-        print("Error generating hash.")
-        welcome_func()
+        print("Error generating hash.\n")
 
 
 def compare_hash():
@@ -40,10 +37,10 @@ def compare_hash():
     plaintext_hash = str.encode(input("please enter hash: "))
 
     if bcrypt.checkpw(byte_password, plaintext_hash):
-        print("Password and hash match")
+        print("Password and hash match.\n")
     else:
-        print("Password and hash do not match")
+        print("Password and hash do not match.\n")
+
+
+while True:
     welcome_func()
-
-
-welcome_func()
