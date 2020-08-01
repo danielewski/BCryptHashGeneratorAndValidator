@@ -26,7 +26,7 @@ def generate_hash():
     if bcrypt.checkpw(byte_password, hashed_password):
         decoded_hashed_password = hashed_password.decode()
         pyperclip.copy(decoded_hashed_password)
-        print("Success, Hashed password copied to clipboard: ", decoded_hashed_password, "\n")
+        print(f"Success, Hashed password copied to clipboard: {decoded_hashed_password} \n")
     else:
         print("Error generating hash.\n")
 
